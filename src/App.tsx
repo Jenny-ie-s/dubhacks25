@@ -8,6 +8,7 @@ import { CollectionPage } from "./components/CollectionPage";
 import { Button } from "./components/ui/button";
 import { Home, User, CopyPlus, Award } from "lucide-react";
 import { Toaster } from "./components/ui/sonner";
+import React from "react";
 
 type Page = "community" | "profile" | "proposal" | "payment" | "edit-project" | "collection";
 
@@ -93,63 +94,67 @@ export default function App() {
       {/* Navigation Bar */}
       {currentPage !== "payment" && currentPage !== "edit-project" && (
         <nav className="fixed top-0 left-0 right-0 bg-white border-b-2 border-[#78350f]/20 z-50 shadow-sm">
-          <div className="max-w-7xl mx-auto px-6 py-3">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
+              <div className="flex gap-2">
                 <img
                 src="src/components/ui/logo.png"
                 alt="Evie Logo" 
                 className="h-8 w-8 object-contain"/>
                 <h2 className="text-[#78350f]">Evie</h2>
               </div>
-              <div className="flex gap-2">
+              <div className="flex gap-1 sm:gap-2">
                 <Button
                   variant={currentPage === "community" ? "default" : "ghost"}
                   onClick={() => setCurrentPage("community")}
+                  size="sm"
                   className={
                     currentPage === "community" 
                       ? "bg-green-500 hover:bg-green-600 text-white" 
                       : "text-[#78350f]/70 hover:text-[#78350f] hover:bg-yellow-50"
                   }
                 >
-                  <Home className="mr-2 h-4 w-4" />
-                  Home
+                  <Home className="h-4 w-4 sm:mr-2" />
+                  <span className="hidden sm:inline">Home</span>
                 </Button>
                 <Button
                   variant={currentPage === "profile" ? "default" : "ghost"}
                   onClick={() => setCurrentPage("profile")}
+                  size="sm"
                   className={
                     currentPage === "profile" 
                       ? "bg-green-500 hover:bg-green-600 text-white" 
                       : "text-[#78350f]/70 hover:text-[#78350f] hover:bg-yellow-50"
                   }
                 >
-                  <User className="mr-2 h-4 w-4" />
-                  My Profile
+                  <User className="h-4 w-4 sm:mr-2" />
+                  <span className="hidden sm:inline">Profile</span>
                 </Button>
                 <Button
                   variant={currentPage === "collection" ? "default" : "ghost"}
                   onClick={() => setCurrentPage("collection")}
+                  size="sm"
                   className={
                     currentPage === "collection" 
                       ? "bg-green-500 hover:bg-green-600 text-white" 
                       : "text-[#78350f]/70 hover:text-[#78350f] hover:bg-yellow-50"
                   }
                 >
-                  <Award className="mr-2 h-4 w-4" />
-                  Collection
+                  <Award className="h-4 w-4 sm:mr-2" />
+                  <span className="hidden sm:inline">Collection</span>
                 </Button>
                 <Button
                   variant={currentPage === "proposal" ? "default" : "ghost"}
                   onClick={() => setCurrentPage("proposal")}
+                  size="sm"
                   className={
                     currentPage === "proposal" 
                       ? "bg-green-500 hover:bg-green-600 text-white" 
                       : "text-[#78350f]/70 hover:text-[#78350f] hover:bg-yellow-50"
                   }
                 >
-                  <CopyPlus className="mr-2 h-5 w-5" />
-                  Create
+                  <CopyPlus className="h-4 w-4 sm:mr-2" />
+                  <span className="hidden sm:inline">Create</span>
                 </Button>
               </div>
             </div>
@@ -166,6 +171,7 @@ export default function App() {
           <ProfilePage 
             onCreateProposal={() => setCurrentPage("proposal")}
             onEditProject={handleEditProject}
+            onViewCommunity={() => setCurrentPage("community")}
           />
         )}
         {currentPage === "collection" && <CollectionPage />}
