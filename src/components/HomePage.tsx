@@ -27,19 +27,19 @@ export function HomePage({ onCreateProposal }: { onCreateProposal: () => void })
     },
     {
       id: "2",
-      title: "Mobile App for Local Artisans",
+      title: "Community Garden Project",
       status: "in-progress",
       fundingStatus: "waiting",
       currentStage: "Stage 3: Development",
-      update: "Need funding approval to proceed with beta testing phase."
+      update: "We've successfully prepared the soil and are ready to begin planting next week."
     },
     {
       id: "3",
-      title: "Solar Panel Installation",
+      title: "Community Garden Project",
       status: "proposal",
       fundingStatus: "waiting",
       currentStage: "Proposal Review",
-      update: "Waiting for community review and initial funding."
+      update: "We've successfully prepared the soil and are ready to begin planting next week."
     }
   ]);
 

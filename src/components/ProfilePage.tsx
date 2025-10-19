@@ -52,19 +52,19 @@ export function ProfilePage({ onCreateProposal, onEditProject, onViewCommunity }
     },
     {
       id: "2",
-      title: "Mobile App for Local Artisans",
+      title: "Community Garden Project",
       status: "in-progress",
       fundingStatus: "waiting",
       currentStage: "Stage 3: Development",
-      latestPostTitle: "Need funding approval to proceed with beta testing phase."
+      latestPostTitle: "We've successfully prepared the soil and are ready to begin planting next week."
     },
     {
       id: "3",
-      title: "Solar Panel Installation",
+      title: "Community Garden Project",
       status: "proposal",
       fundingStatus: "waiting",
       currentStage: "Proposal Review",
-      latestPostTitle: "Waiting for community review and initial funding."
+      latestPostTitle: "We've successfully prepared the soil and are ready to begin planting next week."
     }
   ]);
 
@@ -95,7 +95,7 @@ export function ProfilePage({ onCreateProposal, onEditProject, onViewCommunity }
   const [fundedProjects] = useState<FundedProject[]>([
     {
       id: "f1",
-      title: "Youth Coding Bootcamp",
+      title: "Community Garden Project",
       author: "Marcus Johnson",
       currentStage: "Stage 2: Equipment Purchase",
       fundingGoal: 8000,
@@ -105,7 +105,7 @@ export function ProfilePage({ onCreateProposal, onEditProject, onViewCommunity }
     },
     {
       id: "f2",
-      title: "Community Kitchen Initiative",
+      title: "Community Garden Project",
       author: "Elena Rodriguez",
       currentStage: "Stage 3: Equipment Installation",
       fundingGoal: 12000,
@@ -115,7 +115,7 @@ export function ProfilePage({ onCreateProposal, onEditProject, onViewCommunity }
     },
     {
       id: "f3",
-      title: "Park Cleanup Campaign",
+      title: "Community Garden Project",
       author: "Alex Thompson",
       currentStage: "Final Stage: Completed",
       fundingGoal: 5000,
@@ -215,14 +215,7 @@ export function ProfilePage({ onCreateProposal, onEditProject, onViewCommunity }
 
         {/* My Tasks Section */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
-          <h3 className="text-[#78350f]">My Tasks</h3>
-          <Button 
-            onClick={onCreateProposal}
-            className="bg-green-500 hover:bg-green-600 text-white w-full sm:w-auto"
-          >
-            <PlusCircle className="mr-2 h-5 w-5" />
-            Submit for Funding
-          </Button>
+          <h3 className="text-[#78350f] text-lg font-semibold mb-3">My Tasks</h3>
         </div>
 
         <div className="space-y-4">
@@ -305,8 +298,8 @@ export function ProfilePage({ onCreateProposal, onEditProject, onViewCommunity }
         )}
 
         {/* My Funded Projects Section */}
-        <div className="mt-12">
-          <h3 className="text-[#78350f] mb-6">My Funded Projects</h3>
+        <div className="flex flex-col gap-3 mb-6">
+          <h3 className="text-[#78350f] text-lg font-semibold">My Funded Projects</h3>
           <div className="space-y-4">
             {fundedProjects.map((project) => {
               const fundingPercentage = (project.currentFunding / project.fundingGoal) * 100;
@@ -343,7 +336,7 @@ export function ProfilePage({ onCreateProposal, onEditProject, onViewCommunity }
                         variant="outline"
                         size="sm"
                         onClick={onViewCommunity}
-                        className="border-green-500 text-green-600 hover:bg-green-50 w-full sm:w-auto"
+                        className="border-green-500 text-green-600 hover:bg-green-50 w-auto"
                       >
                         <Eye className="mr-2 h-4 w-4" />
                         See Posts
@@ -389,4 +382,3 @@ export function ProfilePage({ onCreateProposal, onEditProject, onViewCommunity }
     </div>
   );
 }
-task.id
