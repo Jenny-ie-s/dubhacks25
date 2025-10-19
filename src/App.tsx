@@ -95,7 +95,13 @@ export default function App() {
         <nav className="fixed top-0 left-0 right-0 bg-white border-b-2 border-[#78350f]/20 z-50 shadow-sm">
           <div className="max-w-7xl mx-auto px-6 py-3">
             <div className="flex items-center justify-between">
-              <h2 className="text-[#78350f]">FundFlow</h2>
+              <div className="flex items-center gap-2">
+                <img
+                src="src/components/ui/logo.png"
+                alt="Evie Logo" 
+                className="h-8 w-8 object-contain"/>
+                <h2 className="text-[#78350f]">Evie</h2>
+              </div>
               <div className="flex gap-2">
                 <Button
                   variant={currentPage === "community" ? "default" : "ghost"}
